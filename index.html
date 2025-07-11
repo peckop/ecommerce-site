@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop - Product Catalog</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body onload="requireAuth()">
+  <header class="header">
+    DK's - Fake API Store
+    <button id="themeToggle" title="Toggle theme">|🌘|</button>
+  </header>
+  <div class="bill"><i>The Fake Web Store: 100% ad-free, cart-full of nonsense, and dangerously low on real inventory!</i>
+    <p style="text-align: center;">🧼📦😬</p></div>
+
+  <div class="container">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+      <input type="text" id="searchInput" placeholder="Search products..." style="flex: 1;" />
+      <select id="sortSelect">
+        <option value="">Sort By</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+      </select>
+      <div class="cl"><a href="cart.html" id="cartBtn" class="view-cart-link">Cart (0)</a>
+        <button id="logoutBtn">Logout</button></div>
+      <!-- <a href="cart.html" id="cartBtn" class="view-cart-link">Cart (0)</a>
+      <button id="logoutBtn">Logout</button> -->
+    </div>
+
+    <div id="productList" class="products"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
