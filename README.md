@@ -52,4 +52,4 @@ This is a fully functional frontend-only e-commerce store built using HTML, CSS,
 1. Clone this repo
 
 ```bash
-git clone https://dhanushkavi.github.io/ecommerce-site/
+git clone https://dhanushkavi.github.io/ecommerce-site.git
