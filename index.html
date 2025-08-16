@@ -1,35 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shop - Product Catalog</title>
+  <title>TechMart - Modern E-Ticaret</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
 </head>
 <body onload="requireAuth()">
   <header class="header">
-    DK's - Fake API Store
-    <button id="themeToggle" title="Toggle theme">|🌘|</button>
+    <div class="header-content">
+      <div class="logo">
+        🛒 <span>TechMart</span>
+      </div>
+      <nav class="nav-menu">
+        <a href="#" onclick="filterByCategory('all')">Tüm Ürünler</a>
+        <a href="#" onclick="filterByCategory('electronics')">Elektronik</a>
+        <a href="#" onclick="filterByCategory('clothing')">Giyim</a>
+        <a href="#" onclick="filterByCategory('home')">Ev & Yaşam</a>
+      </nav>
+      <div class="header-actions">
+        <button id="themeToggle" title="Tema Değiştir">🌓</button>
+        <a href="cart.html" id="cartBtn" class="cart-btn">
+          <span class="cart-icon">🛒</span>
+          <span id="cartCount">0</span>
+        </a>
+        <button id="logoutBtn" class="logout-btn">Çıkış</button>
+      </div>
+    </div>
   </header>
-  <div class="bill"><i>The Fake Web Store: 100% ad-free, cart-full of nonsense, and dangerously low on real inventory!</i>
-    <p style="text-align: center;">🧼📦😬</p></div>
+
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>🚀 Modern E-Ticaret Deneyimi</h1>
+      <p>En kaliteli ürünler, en uygun fiyatlar, hızlı teslimat!</p>
+    </div>
+  </div>
 
   <div class="container">
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-      <input type="text" id="searchInput" placeholder="Search products..." style="flex: 1;" />
-      <select id="sortSelect">
-        <option value="">Sort By</option>
-        <option value="low">Price: Low to High</option>
-        <option value="high">Price: High to Low</option>
-      </select>
-      <div class="cl"><a href="cart.html" id="cartBtn" class="view-cart-link">Cart (0)</a>
-        <button id="logoutBtn">Logout</button></div>
-      <!-- <a href="cart.html" id="cartBtn" class="view-cart-link">Cart (0)</a>
-      <button id="logoutBtn">Logout</button> -->
+    <div class="filters-section">
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="🔍 Ürün ara..." />
+      </div>
+      <div class="sort-container">
+        <select id="sortSelect">
+          <option value="">Sırala</option>
+          <option value="low">💰 Fiyat: Düşük → Yüksek</option>
+          <option value="high">💎 Fiyat: Yüksek → Düşük</option>
+          <option value="name">📝 İsim: A → Z</option>
+          <option value="rating">⭐ En Popüler</option>
+        </select>
+      </div>
+      <div class="view-toggle">
+        <button id="gridView" class="active">⊞</button>
+        <button id="listView">☰</button>
+      </div>
     </div>
 
-    <div id="productList" class="products"></div>
+    <div class="stats-bar">
+      <span id="productCount">Ürünler yükleniyor...</span>
+      <span id="cartTotal">Sepet: ₺0</span>
+    </div>
+
+    <div id="productList" class="products grid-view"></div>
+    
+    <div id="loadingSpinner" class="loading">
+      <div class="spinner"></div>
+      <p>Ürünler yükleniyor...</p>
+    </div>
   </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>TechMart</h3>
+        <p>Modern e-ticaret deneyimi</p>
+      </div>
+      <div class="footer-section">
+        <h4>Hızlı Linkler</h4>
+        <a href="#">Hakkımızda</a>
+        <a href="#">İletişim</a>
+        <a href="#">Yardım</a>
+      </div>
+      <div class="footer-section">
+        <h4>Kategoriler</h4>
+        <a href="#">Elektronik</a>
+        <a href="#">Giyim</a>
+        <a href="#">Ev & Yaşam</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 TechMart. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
